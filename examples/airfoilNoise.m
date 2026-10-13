@@ -37,9 +37,9 @@ grid(ax, "on");
 axis(ax, "equal");
 xlim(ax, limits);
 ylim(ax, limits);
-xlabel(ax, "Measured sound pressure level [dB]");
-ylabel(ax, "Predicted [dB]");
-title(ax, sprintf("Test set, RMSE %.2f dB", metrics.RMSE));
+xlabel(ax, "Measured sound pressure level [dB]", Interpreter="latex");
+ylabel(ax, "Predicted [dB]", Interpreter="latex");
+title(ax, sprintf("Test set, RMSE %.2f dB", metrics.RMSE), Interpreter="latex");
 
 results = struct("nTrain", nTrain, "rmse", metrics.RMSE, "r2", metrics.R2, ...
     "noiseStd", noiseStd, "figure", fig);

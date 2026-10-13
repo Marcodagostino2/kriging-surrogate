@@ -35,11 +35,11 @@ plot(ax, xq, yKr, "--", LineWidth=1.5);
 plot(ax, xLow, yLow, "ko");
 plot(ax, xHigh, yHigh, "ks", MarkerFaceColor="k");
 grid(ax, "on");
-xlabel(ax, "x");
-ylabel(ax, "y");
+xlabel(ax, "$x$", Interpreter="latex");
+ylabel(ax, "$y$", Interpreter="latex");
 legend(ax, ["Expensive function", "Cheap function", "Co-Kriging", ...
     "Kriging, expensive samples only", "Cheap samples", "Expensive samples"], ...
-    Location="northwest");
+    Location="northwest", Interpreter="latex");
 
 results = struct("nLow", numel(xLow), "nHigh", numel(xHigh), "rmseCoKriging", co.RMSE, ...
     "rmseKriging", kr.RMSE, "rho", coKriging.Rho, "figure", fig);

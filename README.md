@@ -89,11 +89,15 @@ zero and co-Kriging does no better than Kriging on the expensive samples. The au
 off when the cheap function matches the expensive one up to a scale and a smooth correction, as in the
 Forrester case.
 
-![Kriging on the Branin function](docs/figures/branin-kriging.png)
-![Co-Kriging on the Forrester function](docs/figures/forrester-cokriging.png)
-![Co-Kriging on the two-fidelity Branin pair](docs/figures/branin-cokriging.png)
-![Convergence on the 6-D Hartmann function](docs/figures/hartmann6-convergence.png)
-![Parity plot on the airfoil self-noise data](docs/figures/airfoil-parity.png)
+<img src="docs/figures/branin-kriging.png" alt="Kriging on the Branin function" width="100%">
+
+<img src="docs/figures/forrester-cokriging.png" alt="Co-Kriging on the Forrester function" width="60%">
+
+<img src="docs/figures/branin-cokriging.png" alt="Co-Kriging on the two-fidelity Branin pair" width="100%">
+
+<img src="docs/figures/hartmann6-convergence.png" alt="Convergence on the 6-D Hartmann function" width="60%">
+
+<img src="docs/figures/airfoil-parity.png" alt="Parity plot on the airfoil self-noise data" width="60%">
 
 `tools/makeReadmeAssets` reruns the examples and regenerates these figures and the table.
 

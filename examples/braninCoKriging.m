@@ -43,9 +43,9 @@ for k = 1:3
     hold(ax, "on");
     plot(ax, xLow(:, 1), xLow(:, 2), "ko", MarkerSize=4);
     plot(ax, xHigh(:, 1), xHigh(:, 2), "ks", MarkerFaceColor="k", MarkerSize=5);
-    title(ax, titles(k));
-    xlabel(ax, "x_1");
-    ylabel(ax, "x_2");
+    title(ax, titles(k), Interpreter="latex");
+    xlabel(ax, "$x_1$", Interpreter="latex");
+    ylabel(ax, "$x_2$", Interpreter="latex");
     colorbar(ax);
     clim(ax, [min(yGrid), max(yGrid)]);
 end

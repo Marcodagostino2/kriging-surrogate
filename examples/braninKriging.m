@@ -30,9 +30,9 @@ for k = 1:3
     contourf(ax, g1, g2, reshape(panels{k}, size(g1)), 20, LineColor="none");
     hold(ax, "on");
     plot(ax, x(:, 1), x(:, 2), "k.", MarkerSize=12);
-    title(ax, titles(k));
-    xlabel(ax, "x_1");
-    ylabel(ax, "x_2");
+    title(ax, titles(k), Interpreter="latex");
+    xlabel(ax, "$x_1$", Interpreter="latex");
+    ylabel(ax, "$x_2$", Interpreter="latex");
     colorbar(ax);
     if k < 3
         % Function and prediction share one colour scale.

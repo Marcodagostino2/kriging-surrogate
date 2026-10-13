@@ -23,9 +23,9 @@ ax = axes(fig);
 loglog(ax, sizes, rmse, "o-", LineWidth=1.5);
 xticks(ax, sizes);
 grid(ax, "on");
-xlabel(ax, "Training samples");
-ylabel(ax, "Test RMSE");
-title(ax, "Kriging on the 6-D Hartmann function");
+xlabel(ax, "Training samples", Interpreter="latex");
+ylabel(ax, "Test RMSE", Interpreter="latex");
+title(ax, "Kriging on the 6-D Hartmann function", Interpreter="latex");
 
 results = struct("sizes", sizes, "rmse", rmse, "figure", fig);
 end
