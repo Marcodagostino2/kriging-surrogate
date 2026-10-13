@@ -34,6 +34,10 @@ for k = 1:3
     xlabel(ax, "x_1");
     ylabel(ax, "x_2");
     colorbar(ax);
+    if k < 3
+        % Function and prediction share one colour scale.
+        clim(ax, [min(yGrid), max(yGrid)]);
+    end
 end
 
 results = struct("nTrain", nTrain, "rmse", metrics.RMSE, "r2", metrics.R2, "figure", fig);

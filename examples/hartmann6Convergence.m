@@ -21,6 +21,7 @@ end
 fig = figure(Name="Hartmann 6-D: convergence");
 ax = axes(fig);
 loglog(ax, sizes, rmse, "o-", LineWidth=1.5);
+xticks(ax, sizes);
 grid(ax, "on");
 xlabel(ax, "Training samples");
 ylabel(ax, "Test RMSE");

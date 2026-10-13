@@ -47,6 +47,7 @@ for k = 1:3
     xlabel(ax, "x_1");
     ylabel(ax, "x_2");
     colorbar(ax);
+    clim(ax, [min(yGrid), max(yGrid)]);
 end
 
 results = struct("nLow", size(xLow, 1), "nHigh", size(xHigh, 1), "rmseCoKriging", co.RMSE, ...

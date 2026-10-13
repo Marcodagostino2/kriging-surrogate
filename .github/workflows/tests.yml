@@ -1,0 +1,19 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: matlab-actions/setup-matlab@v3
+        with:
+          release: R2024b
+          products: Optimization_Toolbox
+      - uses: matlab-actions/run-tests@v3
+        with:
+          source-folder: src
+          select-by-folder: tests
