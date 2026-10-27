@@ -81,7 +81,7 @@ results = forresterCoKriging();
 | `hartmann6Convergence` | 25, 50, 100, 200, 400 samples of the 6-D Hartmann function | test RMSE from 0.446 to 0.125 |
 | `airfoilNoise` | 1202 measured rows | test RMSE 1.24 dB, R<sup>2</sup> 0.965, noise from the nugget 0.81 dB |
 | `forresterCoKriging` | 11 cheap and 4 expensive samples | RMSE 0.232 with co-Kriging (rho 1.89), 5.616 with Kriging |
-| `braninCoKriging` | 40 cheap and 10 expensive samples | RMSE 57.501 with co-Kriging (rho -0.002), 56.982 with Kriging: the fidelities correlate at 0.15 only |
+| `braninCoKriging` | 40 cheap and 20 expensive samples | RMSE 15.108 with co-Kriging (rho 0.005), 15.165 with Kriging: the fidelities correlate at 0.15 only |
 
 The two-fidelity Branin pair is kept as a negative case. Its cheap function follows the expensive one
 poorly over the domain, so no scale `rho` turns it into a useful predictor, `rho` comes out close to
@@ -89,15 +89,15 @@ zero and co-Kriging does no better than Kriging on the expensive samples. The au
 off when the cheap function matches the expensive one up to a scale and a smooth correction, as in the
 Forrester case.
 
-<img src="docs/figures/branin-kriging.png" alt="Kriging on the Branin function" width="100%">
+<p align="center"><img src="docs/figures/branin-kriging.png" alt="Kriging on the Branin function" width="100%"></p>
 
-<img src="docs/figures/forrester-cokriging.png" alt="Co-Kriging on the Forrester function" width="60%">
+<p align="center"><img src="docs/figures/forrester-cokriging.png" alt="Co-Kriging on the Forrester function" width="60%"></p>
 
-<img src="docs/figures/branin-cokriging.png" alt="Co-Kriging on the two-fidelity Branin pair" width="100%">
+<p align="center"><img src="docs/figures/branin-cokriging.png" alt="Co-Kriging on the two-fidelity Branin pair" width="100%"></p>
 
-<img src="docs/figures/hartmann6-convergence.png" alt="Convergence on the 6-D Hartmann function" width="60%">
+<p align="center"><img src="docs/figures/hartmann6-convergence.png" alt="Convergence on the 6-D Hartmann function" width="60%"></p>
 
-<img src="docs/figures/airfoil-parity.png" alt="Parity plot on the airfoil self-noise data" width="60%">
+<p align="center"><img src="docs/figures/airfoil-parity.png" alt="Parity plot on the airfoil self-noise data" width="60%"></p>
 
 `tools/makeReadmeAssets` reruns the examples and regenerates these figures and the table.
 

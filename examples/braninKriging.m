@@ -22,7 +22,7 @@ fprintf("Branin, %d samples: grid RMSE %.3f (output range %.0f), R^2 %.4f\n", ..
     nTrain, metrics.RMSE, max(yGrid) - min(yGrid), metrics.R2);
 
 fig = figure(Name="Branin: Kriging", Position=[100 100 1100 330]);
-layout = tiledlayout(fig, 1, 3, TileSpacing="compact");
+layout = tiledlayout(fig, 1, 3, TileSpacing="compact", Padding="tight");
 panels = {yGrid, yHat, sqrt(s2)};
 titles = ["Branin function", "Kriging prediction", "Standard deviation"];
 for k = 1:3

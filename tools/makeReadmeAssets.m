@@ -45,4 +45,22 @@ set(fig, "PaperUnits", "centimeters", "PaperSize", fig.Position(3:4), ...
     "PaperPosition", [0 0 fig.Position(3:4)]);
 print(fig, file, "-dpng", "-r150");
 close(fig);
+centerDrawing(file);
+end
+
+function centerDrawing(file)
+% Move the drawing to the centre of the image without changing the image
+% size, so that the unequal margins MATLAB leaves around the axes do not push
+% the figure to one side.
+img = imread(file);
+ink = any(img < 255, 3);
+rows = find(any(ink, 2));
+cols = find(any(ink, 1));
+drawing = img(rows(1):rows(end), cols(1):cols(end), :);
+[h, w] = size(drawing, [1 2]);
+top = floor((size(img, 1) - h) / 2);
+left = floor((size(img, 2) - w) / 2);
+centered = 255 * ones(size(img), "like", img);
+centered(top + (1:h), left + (1:w), :) = drawing;
+imwrite(centered, file);
 end

@@ -1,8 +1,8 @@
 function results = braninCoKriging()
 % braninCoKriging  Co-Kriging on the two-fidelity Branin pair of Dong et al.
 %
-%   40 cheap and 10 expensive Latin hypercube samples. Co-Kriging is
-%   compared with Kriging fitted on the 10 expensive samples alone, on a
+%   40 cheap and 20 expensive Latin hypercube samples. Co-Kriging is
+%   compared with Kriging fitted on the 20 expensive samples alone, on a
 %   50-by-50 grid of the expensive function.
 %
 %   The example shows a limit of the autoregressive model. Over the domain
@@ -11,7 +11,7 @@ function results = braninCoKriging()
 %   and co-Kriging does no better than Kriging on the expensive samples.
 bounds = [-5 0; 10 15];
 xLow = bounds(1, :) + kriging.latinHypercube(40, 2, Seed=2) .* diff(bounds);
-xHigh = bounds(1, :) + kriging.latinHypercube(10, 2, Seed=3) .* diff(bounds);
+xHigh = bounds(1, :) + kriging.latinHypercube(20, 2, Seed=3) .* diff(bounds);
 yLow = benchmarks.braninLowFidelity(xLow);
 yHigh = benchmarks.braninHighFidelity(xHigh);
 opts = kriging.FitOptions();
@@ -34,7 +34,7 @@ fprintf("Two-fidelity Branin: grid RMSE %.3f with co-Kriging, %.3f with Kriging 
     co.RMSE, kr.RMSE, coKriging.Rho, correlation);
 
 fig = figure(Name="Branin: co-Kriging", Position=[100 100 1100 330]);
-layout = tiledlayout(fig, 1, 3, TileSpacing="compact");
+layout = tiledlayout(fig, 1, 3, TileSpacing="compact", Padding="tight");
 panels = {yGrid, yCo, yKr};
 titles = ["Expensive function", "Co-Kriging", "Kriging, expensive samples only"];
 for k = 1:3
